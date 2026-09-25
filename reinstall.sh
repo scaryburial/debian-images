@@ -68,6 +68,9 @@ CMDLINE="auto=true priority=critical preseed/url=${PRESEED_URL} partman-auto/dis
 echo "> kexec 引导：$CMDLINE"
 kexec -l ./linux --initrd=./initrd.gz --command-line="$CMDLINE"
 
-echo "> 3 秒后重启进入自动安装（约 10~20 分钟）。请通过商家控制台观察进度。"
+echo "> 3 秒后用 kexec 直接启动安装内核（约 10~20 分钟）。请通过商家控制台观察进度。"
 sleep 3
+# 必须用 kexec -e 直接引导已加载的安装内核；普通 reboot 会回到旧系统。
+kexec -e
+# 若上面的 kexec -e 未能接管（某些 VPS 会忽略），退回到普通重启：
 systemctl reboot || reboot
