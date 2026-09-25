@@ -79,6 +79,13 @@ done
 
 CMDLINE="auto=true priority=critical preseed/url=${PRESEED} partman-auto/disk=${DISK} net.ifnames=0 biosdevname=0 console=tty0 console=ttyS0,115200"
 
+# --- DRYRUN：只做预检，不改动系统 ---
+if [ "${DRYRUN:-0}" = "1" ]; then
+  echo "> DRYRUN：预检通过（preseed 与内核均可获取，目标磁盘 ）。未做任何改动。"
+  echo "  去掉 DRYRUN=1 即可正式执行。"
+  exit 0
+fi
+
 # --- 方式一：kexec 直接引导 ---
 if ! command -v kexec >/dev/null 2>&1; then
   echo "> 安装 kexec-tools…"; (apt-get update -y && apt-get install -y kexec-tools) || true
