@@ -30,3 +30,22 @@ ef04d0276850d70e4aaec0b55003628660e9631b26e35215a70ab3c8c707294a4b12731bc73c75a9
 ## 说明
 - 官方源：https://cdimage.debian.org/
 - 仅作镜像分发，版权归 Debian 项目所有，遵循其许可。
+
+---
+
+## 一键重装系统（Debian 12 / 13）
+
+在**目标服务器**上以 root 运行：
+
+```bash
+bash <(curl -fsSL https://raw.githubusercontent.com/scaryburial/debian-images/main/reinstall.sh)
+```
+
+- 弹出菜单选择 **Debian 13（默认，30 秒无操作自动选它）** 或 **Debian 12**。
+- 自动下载安装内核（netinst），用 kexec 引导进入**全自动安装**。
+- 装完后：**root / SSH 密码 = `Xzc345963`**，并在**首次开机自动安装雷电面板**。
+
+> ⚠️ **高风险**：本脚本会**完全擦除目标磁盘数据**并重装系统。
+> - 需要服务器（VPS）支持 **kexec**；不同商家（KVM/OpenVZ 等）表现不同。
+> - **请务必先在一台测试机上验证**，并确保有商家控制台可救急。
+> - 运行时会要求输入 `yes` 二次确认。
