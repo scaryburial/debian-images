@@ -27,11 +27,11 @@ esac
 
 case "$VER" in
   12)
-    KERNEL_URL="https://deb.debian.org/debian/dists/bookworm/main/installer-amd64/current/images/netboot/debian-installer/amd64"
+    KERNEL_URL="https://mirrors.tuna.tsinghua.edu.cn/debian/dists/bookworm/main/installer-amd64/current/images/netboot/debian-installer/amd64"
     PRESEED_URL="${REPO_RAW}/preseed-12.cfg"
     ;;
   *)
-    KERNEL_URL="https://deb.debian.org/debian/dists/stable/main/installer-amd64/current/images/netboot/debian-installer/amd64"
+    KERNEL_URL="https://mirrors.tuna.tsinghua.edu.cn/debian/dists/stable/main/installer-amd64/current/images/netboot/debian-installer/amd64"
     PRESEED_URL="${REPO_RAW}/preseed-13.cfg"
     ;;
 esac
