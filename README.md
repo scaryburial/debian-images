@@ -4,7 +4,7 @@
 镜像均来自 Debian 官方 [cdimage.debian.org](https://cdimage.debian.org/)，未做任何修改。
 
 ## 📥 下载
-到本仓库 **Releases** 下载（含 `.sha512` 校验；另附官方 `SHA512SUMS`）：
+到本仓库 **[Releases](https://github.com/scaryburial/debian-images/releases/tag/debian-12.11.0_13.7.0)** 下载（含 `.sha512` 校验；另附官方 `SHA512SUMS.12/13`）：
 
 | 版本 | 文件 | 大小 |
 |---|---|---|
@@ -24,3 +24,6 @@ sha512sum -c SHA512SUMS --ignore-missing
 ## ℹ️ 说明
 - 官方源：https://cdimage.debian.org/
 - 仅作镜像分发，版权归 Debian 项目所有，遵循其许可。
+
+## 🔑 校验值（SHA512）
+
